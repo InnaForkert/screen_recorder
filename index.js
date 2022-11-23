@@ -4,6 +4,7 @@ let stream;
 const chunks = [];
 let count = 0;
 const list = document.querySelector("#recordList");
+const h2 = document.querySelector("#h2");
 
 start.addEventListener("click", handleRecord);
 stop.addEventListener("click", handleStop);
@@ -18,6 +19,7 @@ async function handleRecord() {
   });
   recorder.addEventListener("dataavailable", pushRec);
   recorder.start();
+  h2.innerText = "🚨Recording...";
 }
 
 function pushRec(e) {
@@ -37,4 +39,5 @@ function handleStop() {
   recorder = null;
   const track = stream.getVideoTracks()[0];
   track.stop();
+  h2.innerHTML = "&nbsp;";
 }
