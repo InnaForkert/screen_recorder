@@ -54,6 +54,8 @@ ul {
   padding: 0;
   border-radius: 14px;
   overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 a {

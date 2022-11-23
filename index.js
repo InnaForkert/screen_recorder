@@ -23,11 +23,8 @@ async function handleRecord() {
 }
 
 function pushRec(e) {
-  console.log(e);
   chunks.push(e.data);
-  console.log(chunks);
   const blob = new Blob(chunks, { type: "video/webm; codecs=vp8" });
-  console.log(blob);
   count += 1;
   const link = URL.createObjectURL(blob);
   const a = `<li><a href='${link}' download='recording_${count}.webm'}'>video ${count}</a></li>`;
